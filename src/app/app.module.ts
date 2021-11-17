@@ -9,13 +9,15 @@ import { FormsModule } from '@angular/forms';
 import { ServiceDepartamentos } from './services/departamento.service';
 import { HomeComponent } from './components/home/home.component';
 import { InsertardepartamentoComponent } from './components/insertardepartamento/insertardepartamento.component';
+import { EditardepartamentoComponent } from './components/editardepartamento/editardepartamento.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     HomeComponent,
-    InsertardepartamentoComponent
+    InsertardepartamentoComponent,
+    EditardepartamentoComponent
   ],
   imports: [
     BrowserModule, 

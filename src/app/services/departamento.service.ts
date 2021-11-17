@@ -8,6 +8,14 @@ import { Departamento } from "../models/departamento";
 export class ServiceDepartamentos {
     constructor(private _http: HttpClient){}
 
+    updateDepartamento(departamento: Departamento): Observable<any>{
+        var json = JSON.stringify(departamento);
+        var header = new HttpHeaders().set("Content-Type", "application/json");
+        var request = "/api/departamentos";
+        var url = Global.urldepartamentos + request;
+        return this._http.put(url, json, {headers: header});
+    }
+
     insertarDepartamento(departamento: Departamento): Observable<any> {
         //DEBEMOS CONVERTIR EL OBJETO A JSON
         var json = JSON.stringify(departamento);

@@ -5,6 +5,7 @@
             <th>Número</th>
             <th>Nombre</th>
             <th>Localidad</th>
+            <th></th>
         </tr>
     </thead>
     <tbody *ngIf="departamentos">
@@ -12,6 +13,13 @@
             <td>{{dept.numero}}</td>
             <td>{{dept.nombre}}</td>
             <td>{{dept.localidad}}</td>
+            <td>
+                <a class="btn btn-info"
+[routerLink]="['/editar', dept.numero, dept.nombre, dept.localidad]"
+                >
+                    Editar
+                </a>
+            </td>
         </tr>
     </tbody>
 </table>
