@@ -1,0 +1,17 @@
+<h1>Home departamentos</h1>
+<table class="table table-borderless">
+    <thead>
+        <tr>
+            <th>Número</th>
+            <th>Nombre</th>
+            <th>Localidad</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="departamentos">
+        <tr *ngFor="let dept of departamentos">
+            <td>{{dept.numero}}</td>
+            <td>{{dept.nombre}}</td>
+            <td>{{dept.localidad}}</td>
+        </tr>
+    </tbody>
+</table>
