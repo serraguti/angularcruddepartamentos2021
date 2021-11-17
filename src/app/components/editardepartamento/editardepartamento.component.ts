@@ -10,12 +10,25 @@ import { ServiceDepartamentos } from 'src/app/services/departamento.service';
 })
 export class EditardepartamentoComponent implements OnInit {
   public departamento!: Departamento;
+  @ViewChild("cajanumero") cajanumero!: ElementRef;
+  @ViewChild("cajanombre") cajanombre!: ElementRef;
+  @ViewChild("cajalocalidad") cajalocalidad!: ElementRef;
 
   constructor(
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+    private _router: Router,
+    private _service: ServiceDepartamentos
   ) { }
 
-  updateDepartamento(): void {}
+  updateDepartamento(): void {
+    var nombre = this.cajanombre.nativeElement.value;
+    var localidad = this.cajalocalidad.nativeElement.value;
+    this.departamento.nombre = nombre;
+    this.departamento.localidad = localidad;
+    this._service.updateDepartamento(this.departamento).subscribe(response => {
+      this._router.navigate(["/"]);
+    });
+  }
 
   ngOnInit(): void {
     this._route.params.subscribe((params: Params) => {

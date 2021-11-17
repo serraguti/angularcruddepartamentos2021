@@ -6,6 +6,7 @@ import { EditardepartamentoComponent } from "./components/editardepartamento/edi
 
 const appRoutes: Routes = [
     {path: "", component: HomeComponent},
+    {path: "eliminar/:iddepartamento", component: HomeComponent},
     {path: "insertar", component: InsertardepartamentoComponent},
     {path: "editar/:numero/:nombre/:localidad", component: EditardepartamentoComponent}
 ]

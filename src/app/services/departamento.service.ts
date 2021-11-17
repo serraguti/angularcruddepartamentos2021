@@ -8,6 +8,12 @@ import { Departamento } from "../models/departamento";
 export class ServiceDepartamentos {
     constructor(private _http: HttpClient){}
 
+    deleteDepartamento(id: string): Observable<any>{
+        var request = "/api/departamentos/" + id;
+        var url = Global.urldepartamentos + request;
+        return this._http.delete(url);
+    }
+
     updateDepartamento(departamento: Departamento): Observable<any>{
         var json = JSON.stringify(departamento);
         var header = new HttpHeaders().set("Content-Type", "application/json");
