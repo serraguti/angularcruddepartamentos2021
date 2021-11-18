@@ -19,6 +19,15 @@
                 >
                     Editar
                 </a>
+                |
+                <a [routerLink]="['/eliminar', dept.numero]">
+                    Eliminar RouterLink
+                </a>
+                |
+                <button (click)="eliminarDepartamento(dept.numero)"
+                class="btn btn-danger">
+                    Eliminar
+                </button>
             </td>
         </tr>
     </tbody>
