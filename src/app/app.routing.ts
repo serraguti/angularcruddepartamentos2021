@@ -4,9 +4,11 @@ import { HomeComponent } from "./components/home/home.component";
 import { InsertardepartamentoComponent } from "./components/insertardepartamento/insertardepartamento.component";
 import { EditardepartamentoComponent } from "./components/editardepartamento/editardepartamento.component";
 import { EmpleadosdepartamentoComponent } from "./components/empleadosdepartamento/empleadosdepartamento.component";
+import { IncrementarsalarioempleadoComponent } from "./components/incrementarsalarioempleado/incrementarsalarioempleado.component";
 
 const appRoutes: Routes = [
     {path: "", component: HomeComponent},
+    {path: "incrementarsalario/:idempleado", component: IncrementarsalarioempleadoComponent},
     {path: "empleados/:iddepartamento", component: EmpleadosdepartamentoComponent},
     {path: "eliminar/:iddepartamento", component: HomeComponent},
     {path: "insertar", component: InsertardepartamentoComponent},
