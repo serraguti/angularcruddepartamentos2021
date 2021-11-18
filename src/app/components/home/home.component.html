@@ -2,6 +2,7 @@
 <table class="table table-borderless">
     <thead>
         <tr>
+            <th></th>
             <th>Número</th>
             <th>Nombre</th>
             <th>Localidad</th>
@@ -10,6 +11,12 @@
     </thead>
     <tbody *ngIf="departamentos">
         <tr *ngFor="let dept of departamentos">
+            <td>
+                <a [routerLink]="['/empleados', dept.numero]"
+                class="btn btn-outline-info">
+                    Empleados
+                </a>
+            </td>
             <td>{{dept.numero}}</td>
             <td>{{dept.nombre}}</td>
             <td>{{dept.localidad}}</td>
